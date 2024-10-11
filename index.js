@@ -1,25 +1,23 @@
 const timelineData = [
-  
     {
-        date: "2024",
+        date: "October 1, 2024",
         title: "Currently Pursuing B.Tech",
         description: "Currently pursuing my B.Tech at SRM University.",
         icon: "fa-calendar-alt"
     },
     {
-        date: "2022",
+        date: "May 20, 2022",
         title: "Completed Intermediate Studies",
         description: "Finished intermediate studies at some college.",
         icon: "fa-calendar-alt"
     },
     {
-        date: "2020",
+        date: "April 25, 2020",
         title: "Completed 10th Grade",
         description: "Completed my 10th grade at Narayana EM School.",
         icon: "fa-calendar-alt"
     },
 ];
-
 
 const projects = [
     {
@@ -27,7 +25,7 @@ const projects = [
         description: "Description for Project 1",
         link: "https://example.com/project1",
         banner: "https://i.ytimg.com/vi/XNgqN_Vojcw/maxresdefault.jpg",
-        icon: "fa-code" 
+        icon: "fa-code"
     },
     {
         title: "Project 2",
@@ -59,18 +57,15 @@ const projects = [
     }
 ];
 
-
 let itemsToShow = 3;
-let currentIndex = 0; 
+let currentIndex = 0;
 
 const generateTimeline = (showAll = false) => {
     const timelineContainer = document.querySelector('.timeline-items');
-    timelineContainer.innerHTML = ""; 
+    timelineContainer.innerHTML = "";
 
-    
     const itemsToDisplay = showAll ? timelineData.length : currentIndex + itemsToShow;
 
-    
     for (let i = 0; i < itemsToDisplay && i < timelineData.length; i++) {
         const item = timelineData[i];
 
@@ -83,14 +78,14 @@ const generateTimeline = (showAll = false) => {
 
         const date = document.createElement('div');
         date.classList.add('timeline-date');
-        date.innerHTML = `<i class="fas ${item.icon}"></i> ${item.date}`; 
+        date.innerHTML = `<i class="fas ${item.icon}"></i> ${item.date}`;
         timelineItem.appendChild(date);
 
         const content = document.createElement('div');
         content.classList.add('timeline-content');
 
         const title = document.createElement('h3');
-        title.innerHTML = `<i class="fas ${item.icon}"></i> ${item.title}`; 
+        title.innerHTML = `<i class="fas ${item.icon}"></i> ${item.title}`;
         content.appendChild(title);
 
         const description = document.createElement('p');
@@ -101,18 +96,15 @@ const generateTimeline = (showAll = false) => {
         timelineContainer.appendChild(timelineItem);
     }
 
-   
     currentIndex = itemsToDisplay;
 
-  
     const showMoreBtn = document.querySelector('#show-more-btn');
     if (currentIndex >= timelineData.length) {
-        showMoreBtn.style.display = 'none'; 
+        showMoreBtn.style.display = 'none';
     } else {
-        showMoreBtn.style.display = 'block'; 
+        showMoreBtn.style.display = 'block';
     }
 };
-
 
 const showMoreTimeline = () => {
     generateTimeline();
@@ -124,12 +116,11 @@ window.onload = () => {
 
 document.querySelector('#show-more-btn').addEventListener('click', showMoreTimeline);
 
-
-let visibleProjects = 3; 
+let visibleProjects = 3;
 
 function renderProjects() {
     const projectList = document.getElementById("project-list");
-    projectList.innerHTML = ""; 
+    projectList.innerHTML = "";
     const projectsToShow = projects.slice(0, visibleProjects);
 
     projectsToShow.forEach((project) => {
@@ -137,9 +128,9 @@ function renderProjects() {
         projectItem.className = "project-item";
         projectItem.innerHTML = `
             <img src="${project.banner}" alt="${project.title}">
-            <h3><i class="fas ${project.icon}"></i> ${project.title}</h3> <!-- Added icon to project title -->
+            <h3><i class="fas ${project.icon}"></i> ${project.title}</h3>
             <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a> <!-- External link icon -->
+            <a href="${project.link}" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
         `;
         projectList.appendChild(projectItem);
     });
@@ -149,7 +140,7 @@ function renderProjects() {
 }
 
 function showMoreProjects() {
-    visibleProjects += 3; 
+    visibleProjects += 3;
     renderProjects();
 }
 
