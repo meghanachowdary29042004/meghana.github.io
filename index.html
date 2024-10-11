@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 <body>
-    hello my name is meghana
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#"><img src="./image.png" width="150px" height="50px"></a></div>
+            <ul class="links">
+                <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+            </ul>
+            <a href="#" class="action_btn"><i class="fas fa-file-download"></i> Download Resume</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <ul class="dropdownmenu">
+            <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+            <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="#" class="action_btn"><i class="fas fa-file-download"></i> Download Resume</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="center">
+            <section id="hero" class="hero">
+                <div class="hero-text">
+                    <h1><i class="fas fa-laptop"></i> I am a CSE Enthusiast</h1>
+                    <p>Welcome to my portfolio site. Dive into my journey through Computer Science, projects, and innovations!</p>
+                    <button class="btn"><i class="fas fa-arrow-right"></i> Explore Now</button>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="about" class="about">
+                <section class="timeline-section">
+                    <div class="timeline-items">
+                        <!-- Timeline items will be dynamically generated here -->
+                    </div>
+                    <button id="show-more-btn" class="btn">Show More</button>
+                </section>
+            </section>
+        </div>
+        <div>
+            <section id="projects" class="projects">
+                <h2>My Projects <i class="fas fa-project-diagram"></i></h2>
+                <div class="project-list" id="project-list"></div>
+                <button id="show-more" class="show-more">Show More</button>
+            </section>
+        </div>
+      
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-socials">
+                    <h3>Follow Me <i class="fas fa-share-alt"></i></h3>
+                    <ul>
+                        <li><a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    </ul>
+                </div>
+                <!--
+                <div class="footer-contact">
+                    <h3>Contact Me <i class="fas fa-envelope"></i></h3>
+                    <p><a href="mailto:meghanachowdary29042004@gmail.com">Email Me</a></p>
+                    <p><a href="tel:+1234567890">Call Me</a></p>
+                </div>
+                -->
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+            </div>
+        </footer>
+        
+    </main>
+    <script src="./index.js"></script>
 </body>
 </html>
